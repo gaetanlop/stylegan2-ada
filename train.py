@@ -176,6 +176,8 @@ def setup_training_options(
     desc += f'-{cfg}'
 
     cfg_specs = {
+        'monster1':          dict(ref_gpus=1, kimg=25000,  mb=16, mbstd=8, fmaps=1,  lrate=0.002,     gamma=30,   ema=10,  ramp=None, map=8)
+        'monster2':          dict(ref_gpus=1, kimg=25000,  mb=32, mbstd=16, fmaps=1,  lrate=0.002,     gamma=50,   ema=10,  ramp=None, map=8)
         'auto':          dict(ref_gpus=-1, kimg=25000,  mb=-1, mbstd=-1, fmaps=-1,  lrate=-1,     gamma=-1,   ema=-1,  ramp=0.05, map=2), # populated dynamically based on 'gpus' and 'res'
         'aydao':     dict(ref_gpus=2,  kimg=25000,  mb=16, mbstd=8,  fmaps=1,   lrate=0.002,  gamma=10,   ema=10,  ramp=None, map=8), # uses mixed-precision, 11GB GPU
         '11gb-gpu':     dict(ref_gpus=1,  kimg=25000,  mb=4, mbstd=4,  fmaps=1,   lrate=0.002,  gamma=10,   ema=10,  ramp=None, map=8), # uses mixed-precision, 11GB GPU
